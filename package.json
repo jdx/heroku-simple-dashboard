@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-stylus": "^1.0.5"
+  },
+  "dependencies": {
+    "express": "^4.6.1"
+  }
+}
