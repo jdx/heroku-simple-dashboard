@@ -18,4 +18,5 @@ gulp.task('server', function () {
   nodemon('server.js')
 })
 
-gulp.task('default', ['css', 'watch:css', 'server'])
+gulp.task('default', ['watch:css', 'server'])
+gulp.task('build', ['css'])

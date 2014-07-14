@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "postinstall": "gulp build"
+  },
   "devDependencies": {
     "gulp": "^3.8.6",
     "gulp-nodemon": "^1.0.4",
