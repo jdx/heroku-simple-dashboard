@@ -216,7 +216,7 @@ header .account {
 }
 .apps-table {
   list-style: none;
-  border: 1px solid #000;
+  border: 1px solid #ededed;
   border-radius: 4px;
   max-width: 960px;
   width: 80%;
@@ -224,14 +224,17 @@ header .account {
   padding: 0;
 }
 .apps-table > li {
-  padding: 10px 0px;
+  padding: 15px 0px;
   margin: 5px 40px;
-  border-bottom: 1px solid #666;
-  height: 50px;
+  border-bottom: 1px solid #ededed;
 }
 .apps-table > li > a {
+  text-decoration: none;
+  color: #383838;
+}
+.apps-table > li > a > img,
+.apps-table > li > a > span {
   vertical-align: middle;
-  line-height: 50px;
 }
 .apps-table > li:last-child {
   border-bottom: 0;

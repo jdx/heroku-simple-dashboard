@@ -1,9 +1,11 @@
 var gulp = require('gulp')
 var stylus = require('gulp-stylus')
 var nodemon = require('gulp-nodemon')
+var plumber = require('gulp-plumber')
 
 gulp.task('css', function () {
   return gulp.src('css/app.styl')
+    .pipe(plumber())
     .pipe(stylus())
     .pipe(gulp.dest('assets'))
 })
