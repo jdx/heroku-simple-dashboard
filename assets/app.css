@@ -196,6 +196,7 @@ th {
 }
 body {
   font-family: "Helvetica Neue";
+  background-color: #f0f0f0;
 }
 .hero {
   background-color: #3b2f63;
@@ -242,7 +243,6 @@ header .account {
   background-color: #fff;
   text-align: left;
   list-style: none;
-  border: 1px solid #ededed;
   border-radius: 4px;
   padding: 0;
 }
@@ -285,12 +285,34 @@ a {
   display: flex;
 }
 .modal-content {
-  background-color: rgba(255,255,255,0.8);
-  padding: 20px;
+  background-color: #fff;
+  padding: 15px;
   border-radius: 4px;
+  position: relative;
 }
 .modal-content input[type='text'] {
   border: 0;
-  background-color: rgba(255,255,255,0.8);
-  padding: 3px 8px;
+  padding-top: 8px;
+  display: block;
+  outline: 0;
+  width: 400px;
+  font-size: 32px;
+}
+.modal-content input[type='submit'] {
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #44ffb0;
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  right: -20px;
+  margin-top: -20px;
+  top: 50%;
+  outline: 0;
+}
+.panel-shadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }

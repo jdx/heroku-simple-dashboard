@@ -18,7 +18,7 @@
   </div>
   <div ng-controller='AppCtrl' class='apps-table-wrapper'>
     <a href='#' class='create-app-link'>Create App</a>
-    <ul class='apps-table'>
+    <ul class='apps-table panel-shadow'>
       <li ng-repeat='app in apps'>
         <a href='#'>
           <img src='images/app-icon.png' srcset='images/app-icon@2x.png 2x'>
@@ -28,10 +28,11 @@
     </ul>
   </div>
   <div class='modal-overlay hidden'>
-    <div class='modal-content'>
+    <div class='modal-content panel-shadow'>
       <form>
-        <input type="text" placeholder="App Name">
-        <input type="submit" value="Create">
+        <label for='app-name'>Create new app</label>
+        <input id='app-name' type="text" placeholder="App Name">
+        <input type="submit" value="+">
       </form>
     </div>
   </div>
