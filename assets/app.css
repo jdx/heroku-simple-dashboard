@@ -197,9 +197,23 @@ th {
 body {
   font-family: "Helvetica Neue";
 }
+.hero {
+  background-color: #3b2f63;
+  background-image: -webkit-radial-gradient(0% bottom, rgba(118,72,160,0.7) 0%, rgba(118,72,160,0) 60%), -webkit-radial-gradient(90% bottom, #523f8c 0%, rgba(82,63,140,0) 40%), -webkit-radial-gradient(50% top, rgba(84,90,182,0.6) 0%, rgba(84,90,182,0) 75%), -webkit-radial-gradient(right top, #794aa2 0%, rgba(121,74,162,0) 57%);
+  background-image: radial-gradient(at 0% bottom, rgba(118,72,160,0.7) 0%, rgba(118,72,160,0) 60%), radial-gradient(at 90% bottom, #523f8c 0%, rgba(82,63,140,0) 40%), radial-gradient(at 50% top, rgba(84,90,182,0.6) 0%, rgba(84,90,182,0) 75%), radial-gradient(at right top, #794aa2 0%, rgba(121,74,162,0) 57%);
+  background-size: auto, auto, 100% 1000px, 100% 1000px;
+  background-repeat: no-repeat;
+  padding-bottom: 120px;
+}
+.hero h3 {
+  color: #efefef;
+  font-weight: normal;
+  margin: 20px 0;
+}
 header {
-  background-color: #800080;
+  background-color: rgba(0,0,0,0.3);
   height: 40px;
+  margin-bottom: 40px;
 }
 header a {
   color: #c7c0db;
@@ -214,13 +228,22 @@ header .account {
 .title {
   text-align: center;
 }
-.apps-table {
-  list-style: none;
-  border: 1px solid #ededed;
-  border-radius: 4px;
+.apps-table-wrapper {
   max-width: 960px;
   width: 80%;
   margin: 0 auto;
+  text-align: right;
+  margin-top: -100px;
+}
+.apps-table-wrapper .create-app-link {
+  color: #fff;
+}
+.apps-table {
+  background-color: #fff;
+  text-align: left;
+  list-style: none;
+  border: 1px solid #ededed;
+  border-radius: 4px;
   padding: 0;
 }
 .apps-table > li {
@@ -228,14 +251,46 @@ header .account {
   margin: 5px 40px;
   border-bottom: 1px solid #ededed;
 }
-.apps-table > li > a {
-  text-decoration: none;
-  color: #383838;
-}
 .apps-table > li > a > img,
 .apps-table > li > a > span {
   vertical-align: middle;
 }
 .apps-table > li:last-child {
   border-bottom: 0;
+}
+.hidden {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: #383838;
+}
+.modal-overlay {
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.modal-overlay.showing {
+  display: flex;
+}
+.modal-content {
+  background-color: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 4px;
+}
+.modal-content input[type='text'] {
+  border: 0;
+  background-color: rgba(255,255,255,0.8);
+  padding: 3px 8px;
 }
