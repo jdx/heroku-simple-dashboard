@@ -9,7 +9,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
   <script src="/app.js"></script>
 </head>
-<body ng-app='app'>
+<body ng-app='app' ng-controller='ApplicationCtrl'>
   <div class='hero'>
     <header>
       <a href='#' class='cloudnasium'>Cloudnasium</a>
@@ -17,24 +17,26 @@
     </header>
     <h3 class='title'>My Apps</h3>
   </div>
-  <div ng-controller='AppCtrl' class='apps-table-wrapper'>
-    <a href='#' class='create-app-link'>Create App</a>
-    <ul class='apps-table panel-shadow'>
-      <li ng-repeat='app in apps'>
-        <a href='#'>
-          <img src='images/app-icon.png' srcset='images/app-icon@2x.png 2x'>
-          <span>{{app.name}}</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class='modal-overlay hidden'>
-    <div class='modal-content panel-shadow'>
-      <form>
-        <label for='app-name'>Create new app</label>
-        <input id='app-name' type="text" placeholder="App Name">
-        <input type="submit" value="+">
-      </form>
+  <div ng-controller='AppCtrl'>
+    <div class='apps-table-wrapper'>
+      <a href='#' ng-click='creatingApp = true' class='create-app-link'>Create App</a>
+      <ul class='apps-table panel-shadow'>
+        <li ng-repeat='app in apps'>
+          <a href='#'>
+            <img src='images/app-icon.png' srcset='images/app-icon@2x.png 2x'>
+            <span>{{app.name}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class='modal-overlay hidden' ng-class='{showing: creatingApp}'>
+      <div class='modal-content panel-shadow'>
+        <form ng-submit='create(app)'>
+          <label for='app-name'>Create new app</label>
+          <input id='app-name' type="text" ng-model='app.name' placeholder="App Name">
+          <input type="submit" value="+">
+        </form>
+      </div>
     </div>
   </div>
 </body>

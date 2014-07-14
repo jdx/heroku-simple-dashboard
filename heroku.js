@@ -1,9 +1,10 @@
 var express = require('express');
 var cookieParser = require('cookie-parser')
 var cookieSession = require('cookie-session')
+var bodyParser = require('body-parser')
 var app     = express.Router();
-var request = require('request');
 
+app.use(bodyParser.json())
 app.use(cookieParser('your cookie secret'));
 app.use(cookieSession({
   secret: 'your session secret',
@@ -24,17 +25,8 @@ var bouncer = require('heroku-bouncer')({
 app.use(bouncer.middleware);
 app.use(bouncer.router);
 
-app.get('/heroku/apps', function(req, res) {
-  request.get({
-    url: 'https://api.heroku.com/apps',
-    json: true,
-    headers: {
-      authorization: 'Bearer ' + req['heroku-bouncer'].token,
-      accept: 'application/vnd.heroku+json; version=3'
-    }
-  }, function (err, _, apps) {
-    res.json(apps);
-  })
-});
+var herokuSvc = require('./services/heroku')
+app.get('/heroku/apps', herokuSvc.list)
+app.post('/heroku/apps', herokuSvc.create)
 
 module.exports = app
